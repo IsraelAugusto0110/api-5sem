@@ -3,12 +3,11 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./views/Home";
-import Login from "./views/Login";
-
-const Stack = createNativeStackNavigator();
+import { Home, Login } from "./views";
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -16,14 +15,14 @@ export default function App() {
           name="Home"
           component={Home}
           options={{
-            title: "App",
+            title: "Bem vindo",
             headerStyle: {
               backgroundColor: "lightblue",
             },
             headerTintColor: "#333",
             headerTitleStyle: {
               fontWeight: "bold",
-              alignSelf: "center",
+              justify: "center",
             },
           }}
         />
