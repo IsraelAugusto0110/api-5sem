@@ -13,7 +13,7 @@ let solicitacao = models.Solicitacao;
 
 app.get("/create", async (req, res) => {
   let create = await user.create({
-    name: "usuario2",
+    email: "bobesponja@gmail.com",
     password: "123",
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -46,10 +46,10 @@ app.get("/update", async (req, res) => {
   });
 }); */
 
-/* app.post("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
   let response = await user.findOne({
     where: {
-      name: req.body.name,
+      email: req.body.email,
       password: req.body.password,
     },
   });
@@ -58,7 +58,7 @@ app.get("/update", async (req, res) => {
   } else {
     res.send(response);
   }
-}); */
+});
 
 let port = process.env.PORT || 3001;
 app.listen(port, (req, res) => {

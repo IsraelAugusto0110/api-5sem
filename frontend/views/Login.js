@@ -13,6 +13,32 @@ import { css } from "../assets/css/Css";
 
 export default function Login() {
   const [display, setDisplay] = useState("none");
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [login, setLogin] = useState(null);
+
+  async function sendForm() {
+    let response = await fetch("http://192.168.15.9:3001/login", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+
+    let json = await response.json();
+    console.log(json);
+    if (json === "error") {
+      setDisplay("flex");
+      setTimeout(() => {
+        setDisplay("none");
+      }, 3500);
+    }
+  }
 
   return (
     <KeyboardAvoidingView
@@ -28,16 +54,18 @@ export default function Login() {
       </View>
 
       <View style={css.login__form}>
-        <TextInput style={css.login__input} placeholder="Email" />
+        <TextInput
+          style={css.login__input}
+          placeholder="Email"
+          onChangeText={(text) => setEmail(text)}
+        />
         <TextInput
           style={css.login__input}
           placeholder="Senha"
           secureTextEntry={true}
+          onChangeText={(text) => setPassword(text)}
         />
-        <TouchableOpacity
-          onPress={() => setDisplay("flex")}
-          style={css.login__btn}
-        >
+        <TouchableOpacity onPress={() => sendForm()} style={css.login__btn}>
           <Text style={css.login__btnText}>ENTRAR</Text>
         </TouchableOpacity>
       </View>
