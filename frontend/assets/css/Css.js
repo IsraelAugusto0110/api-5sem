@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../colors/Colors";
 
 const css = StyleSheet.create({
   container: {
@@ -6,18 +7,6 @@ const css = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  btn__Home: {
-    backgroundColor: "lightblue",
-    width: "50%",
-    padding: 5,
-    alignItems: "center",
-    borderRadius: 15,
-  },
-  btn_HomeText: {
-    color: "yellow",
-    fontWeight: "900",
-    fontSize: 25,
   },
   login_msg: (text = "none") => ({
     display: text,
@@ -34,19 +23,19 @@ const css = StyleSheet.create({
     fontSize: 20,
     padding: 5,
     marginBottom: 15,
-    borderColor: "lightblue",
-    borderWidth: 1,
+    borderColor: colors.mainColor,
+    borderWidth: 1.5,
     borderRadius: 5,
   },
   login__btn: {
     padding: 10,
-    backgroundColor: "lightblue",
+    backgroundColor: colors.mainColor,
     alignSelf: "center",
     borderRadius: 5,
   },
   login__btnText: {
     fontWeight: "bold",
-    color: "#ffff",
+    color: colors.second,
     fontSize: 20,
   },
   login__logomarca: {
