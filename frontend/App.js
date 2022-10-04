@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Home, Login } from "./views";
 import { colors } from "./assets/colors/Colors";
+import AreaRestrita from "./views/arearestrita/AreaRestrita";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -32,6 +33,7 @@ export default function App() {
           options={{ headerShown: false }}
           component={Login}
         />
+        <Stack.Screen name="AreaRestrita" component={AreaRestrita} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -7,18 +7,19 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  AsyncStorage,
 } from "react-native";
 
 import { css } from "../assets/css/Css";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [display, setDisplay] = useState("none");
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [login, setLogin] = useState(null);
 
   async function sendForm() {
-    let response = await fetch("http://192.168.15.9:3001/login", {
+    let response = await fetch("http://172.16.3.19:3001/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -37,6 +38,13 @@ export default function Login() {
       setTimeout(() => {
         setDisplay("none");
       }, 3500);
+      await AsyncStorage.clear();
+    } else {
+      let userData = await AsyncStorage.setItem(
+        "userData",
+        JSON.stringify(json)
+      );
+      navigation.navigate("AreaRestrita");
     }
   }
 
