@@ -33,7 +33,6 @@ export default function AreaRestrita(props) {
         }}
         name="Perfil"
         component={Perfil}
-        user={user}
       />
       <Tab.Screen
         options={{

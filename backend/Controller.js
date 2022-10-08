@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 let user = models.User;
 let solicitacao = models.Solicitacao;
 
-app.get("/create", async (req, res) => {
+app.get("/adduser", async (req, res) => {
   let create = await user.create({
     email: "bobesponja@gmail.com",
     password: "123",
@@ -21,7 +21,7 @@ app.get("/create", async (req, res) => {
   res.send("usuário criado com sucesso");
 });
 
-app.get("/read", async (req, res) => {
+app.get("/listuser", async (req, res) => {
   let read = await user.findAll({
     raw: true,
   });
@@ -37,14 +37,6 @@ app.get("/update", async (req, res) => {
       console.log(response);
     });
 });
-
-/* app.get("/delete", async (req, res) => {
-  user.destroy({
-    where: {
-      id: 2,
-    },
-  });
-}); */
 
 app.post("/login", async (req, res) => {
   let response = await user.findOne({

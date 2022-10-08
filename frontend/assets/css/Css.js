@@ -77,6 +77,61 @@ const css = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
+  desc__form: {
+    marginTop: 30,
+  },
+  desc__input: {
+    height: 150,
+    padding: 10,
+  },
+  btn__upload: {
+    width: 100,
+    padding: 5,
+
+    alignContent: "center",
+    marginRight: 5,
+    marginLeft: 10,
+  },
+  img__upload: {
+    width: 75,
+    height: 75,
+
+    alignSelf: "center",
+  },
+  containerBtnLine: {
+    flexDirection: "row",
+    width: "80%",
+    justifyContent: "center",
+
+    padding: 10,
+    marginTop: 15,
+  },
+  enviar__btn: {
+    padding: 10,
+    backgroundColor: colors.mainColor,
+    alignSelf: "center",
+    borderRadius: 5,
+    marginTop: 15,
+    width: "80%",
+  },
+  containerBtnEnvia: {
+    width: "50%",
+  },
+  enviar__btnText: {
+    textAlign: "center",
+  },
+  card__solicitacao: {
+    backgroundColor: colors.mainColor,
+    padding: 10,
+    width: "80%",
+    marginTop: 15,
+    borderRadius: 5,
+  },
+  card__text: {
+    fontSize: 20,
+    fontWeight: "400",
+    marginTop: 5,
+  },
 });
 
 export { css };
