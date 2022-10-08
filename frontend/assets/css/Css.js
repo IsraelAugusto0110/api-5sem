@@ -47,6 +47,31 @@ const css = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
+  area__menu: {
+    flexDirection: "row",
+    paddingTop: 40,
+    paddingBottom: 10,
+    width: "100%",
+    backgroundColor: colors.mainColor,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  btn__home: {
+    textAlign: "left",
+  },
+  area__title: {
+    width: "80%",
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#ffff",
+    textAlign: "center",
+  },
+  btn__logout: {
+    textAlign: "right",
+  },
+  containerTop: {
+    justifyContent: "flex-start",
+  },
 });
 
 export { css };

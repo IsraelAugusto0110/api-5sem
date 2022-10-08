@@ -34,7 +34,11 @@ export default function App() {
           options={{ headerShown: false }}
           component={Login}
         />
-        <Stack.Screen name="AreaRestrita" component={AreaRestrita} />
+        <Stack.Screen
+          name="AreaRestrita"
+          options={{ headerShown: false }}
+          component={AreaRestrita}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
