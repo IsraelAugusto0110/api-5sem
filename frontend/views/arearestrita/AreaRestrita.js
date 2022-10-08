@@ -3,11 +3,11 @@ import { Text, View, AsyncStorage } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import { Inicio, Cadastro, Historico } from "../index";
+import { Perfil, NovaSolicitacao, Historico } from "../index";
 import { css } from "../../assets/css/Css";
 import { colors } from "../../assets/colors/Colors";
 
-export default function AreaRestrita() {
+export default function AreaRestrita(props) {
   const Tab = createMaterialBottomTabNavigator();
 
   const [user, setUser] = useState(null);
@@ -29,17 +29,18 @@ export default function AreaRestrita() {
     >
       <Tab.Screen
         options={{
-          tabBarIcon: () => <Icon name="home" size={25} color="#fff" />,
+          tabBarIcon: () => <Icon name="user" size={25} color="#fff" />,
         }}
-        name="Inicio"
-        component={Inicio}
+        name="Perfil"
+        component={Perfil}
+        user={user}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: () => <Icon name="file" size={25} color="#fff" />,
+          tabBarIcon: () => <Icon name="edit" size={25} color="#fff" />,
         }}
-        name="Cadastro"
-        component={Cadastro}
+        name="Nova"
+        component={NovaSolicitacao}
       />
       <Tab.Screen
         options={{

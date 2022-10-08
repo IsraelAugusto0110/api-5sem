@@ -72,6 +72,11 @@ const css = StyleSheet.create({
   containerTop: {
     justifyContent: "flex-start",
   },
+  basicText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#333",
+  },
 });
 
 export { css };

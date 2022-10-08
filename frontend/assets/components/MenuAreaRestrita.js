@@ -11,12 +11,6 @@ export default function MenuAreaRestrita(props) {
   }
   return (
     <View style={css.area__menu}>
-      <TouchableOpacity
-        style={css.btn__home}
-        onPress={() => props.navigation.navigate("Inicio")}
-      >
-        <Icon name="home" size={20} color="#fff" />
-      </TouchableOpacity>
       <Text style={css.area__title}> {props.title} </Text>
       <TouchableOpacity style={css.btn__logout} onPress={() => logout()}>
         <Icon name="sign-out" size={20} color="#fff" />
