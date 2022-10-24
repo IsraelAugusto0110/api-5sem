@@ -132,6 +132,10 @@ const css = StyleSheet.create({
     fontWeight: "400",
     marginTop: 5,
   },
+  txt_desc: {
+    textAlign: "center",
+    fontWeight: "300",
+  },
 });
 
 export { css };
