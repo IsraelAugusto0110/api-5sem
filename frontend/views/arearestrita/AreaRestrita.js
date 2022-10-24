@@ -3,7 +3,7 @@ import { Text, View, AsyncStorage } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import { Perfil, NovaSolicitacao, Historico } from "../index";
+import { Perfil, NovaSolicitacao, Historico, Detalhe } from "../index";
 import { css } from "../../assets/css/Css";
 import { colors } from "../../assets/colors/Colors";
 
