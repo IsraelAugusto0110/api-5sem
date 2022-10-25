@@ -13,7 +13,7 @@ let solicitacao = models.Solicitacao;
 
 app.get("/adduser", async (req, res) => {
   let create = await user.create({
-    email: "bobesponja@gmail.com",
+    email: "123@gmail.com",
     password: "123",
     createdAt: new Date(),
     updatedAt: new Date(),

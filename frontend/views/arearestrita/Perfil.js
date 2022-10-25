@@ -7,13 +7,13 @@ export default function Perfil({ navigation }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    /* async function getUser() {
+    async function getUser() {
       let response = await AsyncStorage.getItem("userData");
       let json = JSON.parse(response);
       setUser(json.email);
     }
-    getUser(); */
-    setUser("123@gmail");
+    getUser();
+    //setUser("123@gmail");
   }, []);
   return (
     <View style={[css.container, css.containerTop]}>
