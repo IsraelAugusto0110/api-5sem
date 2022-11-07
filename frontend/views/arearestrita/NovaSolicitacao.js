@@ -14,9 +14,26 @@ import { css } from "../../assets/css/Css";
 
 export default function NovaSolicitacao({ navigation }) {
   const [descricao, setDescricao] = useState("");
+  const [userId, setUserId] = useState();
 
-  function sendForm() {
-    alert(descricao);
+  useEffect(() => {
+    setUserId(1);
+  }, []);
+
+  async function sendForm() {
+    let response = await fetch("http://192.168.15.8:3001/addsol", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        descricao: descricao,
+        userId: userId,
+      }),
+    });
+    let json = await response.json();
+    console.log(json);
   }
 
   return (

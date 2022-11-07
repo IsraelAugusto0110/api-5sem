@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 let user = models.User;
 let solicitacao = models.Solicitacao;
 
+// create user
 app.get("/adduser", async (req, res) => {
   let create = await user.create({
     email: "123@gmail.com",
@@ -21,6 +22,18 @@ app.get("/adduser", async (req, res) => {
   res.send("usuário criado com sucesso");
 });
 
+// create solicitcao
+app.get("/addsol", async (req, res) => {
+  let create = await solicitacao.create({
+    descricao: req.body.descricao,
+    userId: req.body.userId,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+  res.send("adicionada nova solicitação");
+});
+
+// read user
 app.get("/listuser", async (req, res) => {
   let read = await user.findAll({
     raw: true,
@@ -28,6 +41,15 @@ app.get("/listuser", async (req, res) => {
   console.log(read);
 });
 
+// read solicitacao
+app.get("/listsol", async (req, res) => {
+  let read = await solicitacao.findAll({
+    raw: true,
+  });
+  console.log(read);
+});
+
+// update user
 app.get("/update", async (req, res) => {
   let update = await user
     .findByPk(2, {
