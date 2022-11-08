@@ -23,14 +23,18 @@ app.get("/adduser", async (req, res) => {
 });
 
 // create solicitcao
-app.get("/addsol", async (req, res) => {
+app.post("/addsol", async (req, res) => {
   let create = await solicitacao.create({
     descricao: req.body.descricao,
     userId: req.body.userId,
     createdAt: new Date(),
     updatedAt: new Date(),
   });
-  res.send("adicionada nova solicitação");
+  if (create === null) {
+    res.send(JSON.stringify("error"));
+  } else {
+    res.send(create);
+  }
 });
 
 // read user
