@@ -18,7 +18,7 @@ export default function Login({ navigation }) {
   const [password, setPassword] = useState(null);
 
   async function sendForm() {
-    let response = await fetch("http://192.168.15.3:3001/login", {
+    let response = await fetch("http://192.168.15.7:3001/login", {
       method: "POST",
       headers: {
         Accept: "application/json",

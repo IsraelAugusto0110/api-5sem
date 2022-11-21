@@ -21,7 +21,7 @@ export default function NovaSolicitacao({ navigation }) {
   }, []);
 
   async function sendForm() {
-    let response = await fetch("http://192.168.15.3:3001/addsol", {
+    let response = await fetch("http://192.168.15.7:3001/addsol", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
