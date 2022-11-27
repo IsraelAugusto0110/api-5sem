@@ -12,7 +12,7 @@ secretaria de obras, por exemplo, solicitando a troca de lampadas de um poste ou
 
 ## Versão final
 
-Acessar: [Download APK]https://expo.dev/artifacts/ad33b87a-6332-452c-bb6d-4273e6807127)
+Acessar: [Download APK](https://expo.dev/artifacts/ad33b87a-6332-452c-bb6d-4273e6807127)
 
 - usuario : 123@gmail
 - senha: 123
